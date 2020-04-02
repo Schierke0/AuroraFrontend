@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~@fortawesome/fontawesome-free/css/all.min.css" .btn-primary {
+    border-width: 2px;
+    background-color: rgba(255, 255, 255, 0) !important;
+    color: white!important;
+    border-radius: 0px !important;
+    border-color: white;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: white !important;
+    border-color: white !important;
+    color: black !important;
+    transition: 1s;
+}
+
+.btn-dark {
+    border-width: 2px;
+    background-color: rgba(0, 0, 0, 0) !important;
+    color: rgb(0, 0, 0)!important;
+    border-radius: 0px;
+    border-color: black;
+}
+
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark:active {
+    background-color: black !important;
+    border-color: black !important;
+    color: white !important;
+    transition: 1s;
+}
+
+
+/* deberian ser globales */
+
+#logo {
+    color: white;
+    font-family: 'Arima Madurai', cursive;
+    font-size: 28px;
+}
+
+.contenedores-contenido {
+    border-radius: 15px;
+    background-color: #39B54A;
+}
+
+.nav-tabs .nav-item {
+    margin-bottom: 10px !important;
+    padding: 10px !important;
+}
