@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "~@fortawesome/fontawesome-free/css/all.min.css" .btn-primary {
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+.btn-primary {
     border-width: 2px;
     background-color: rgba(255, 255, 255, 0) !important;
     color: white!important;
@@ -48,7 +49,25 @@
     background-color: #39B54A;
 }
 
-.nav-tabs .nav-item {
-    margin-bottom: 10px !important;
-    padding: 10px !important;
+.nav-tabs .nav-link {
+    border: 1px solid white;
+    border-radius: 0px;
+    color: white;
+}
+
+a:hover,
+a:focus {
+    color: black !important;
+    text-decoration: none;
+    transition: all 0.3s;
+    border: black;
+    background-color: white;
+}
+
+
+/* deberian ser globales */
+
+.card-header {
+    background-color: #39b54ac7;
+    color: white;
 }

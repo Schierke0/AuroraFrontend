@@ -1,1 +1,64 @@
-<p>nueva-pag-estatica works!</p>
+<div class="card mb-5">
+    <h5 class="card-header">Nueva Entrada</h5>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 mt-3 mb-3">
+                <label for="titulo">Titulo</label>
+                <input class="form-control" id="titulo" placeholder="Pagina n">
+            </div>
+            <div class="col-md-6 mt-3 mb-3">
+                <label for="autor">Titulo en menu</label>
+                <input class="form-control" id="autor">
+            </div>
+            <div class="col-md-6 mt-3 mb-3">
+                <label for="titulo">Pagina padre</label>
+                <input class="form-control" id="titulo" placeholder="Pagina n">
+            </div>
+
+            <div class="col-md-6 mt-3 mb-3">
+                <label for="autor">URL:</label>
+                <input class="form-control" id="autor">
+            </div>
+
+            <div class="col-md-6 mt-3 mb-3">
+                <label for="inputPassword4">Palabras clave</label>
+                <input class="form-control">
+            </div>
+            <div class="col-md-6 mt-3 mb-3">
+                <label for="Descripcion">Descripcion</label>
+                <textarea class="form-control" id="Descripcion" rows="3"></textarea>
+            </div>
+            <div class="col-md-4 mt-3 mb-3">
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                    <label class="custom-control-label" for="customSwitch1">Estado de la pagina activo</label>
+                </div>
+            </div>
+            <div class="col-md-4 mt-3 mb-3">
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                    <label class="custom-control-label" for="customSwitch2">Incluir encabezado</label>
+                </div>
+            </div>
+            <div class="col-md-4 mt-3 mb-3">
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch3">
+                    <label class="custom-control-label" for="customSwitch3">Incluir pie de pagina</label>
+                </div>
+            </div>
+            <div class="col-sm-12 mt-3 mb-5">
+                <div class="custom-file mb-3">
+                    Ingresa tus shortcuts.
+                    <div [froalaEditor]></div>
+                </div>
+                <br><br>
+            </div>
+            <br><br>
+            <div class="col-sm-12 m-2">
+                <button class="btn btn-dark">Guardar</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

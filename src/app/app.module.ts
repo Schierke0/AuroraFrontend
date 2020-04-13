@@ -15,7 +15,11 @@ import { SeleccionarTemaComponent } from './seleccionar-tema/seleccionar-tema.co
 import { CrearTemaComponent } from './crear-tema/crear-tema.component';
 import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.component';
 import { AdminPaginasComponent } from './admin-paginas/admin-paginas.component';
-
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+import { ColorPickerModule } from '@iplab/ngx-color-picker';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { SeguridadPaginasComponent } from './seguridad-paginas/seguridad-paginas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,12 +34,20 @@ import { AdminPaginasComponent } from './admin-paginas/admin-paginas.component';
     SeleccionarTemaComponent,
     CrearTemaComponent,
     AdminUsuariosComponent,
-    AdminPaginasComponent
+    AdminPaginasComponent,
+    UsuariosComponent,
+    SeguridadPaginasComponent
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FroalaEditorModule.forRoot(), FroalaViewModule.forRoot(),
+    BrowserModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    ColorPickerModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

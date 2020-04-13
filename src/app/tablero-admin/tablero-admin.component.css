@@ -5,7 +5,10 @@
     @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
     body {
         font-family: 'Poppins', sans-serif;
-        background: #fafafa;
+    }
+    
+    #content {
+        background: #fafafa !important;
     }
     
     p {
@@ -75,6 +78,7 @@
     
     #sidebar .sidebar-header {
         padding: 20px;
+        padding-bottom: 0%;
         background: #6d7ecc00;
     }
     

@@ -12,6 +12,7 @@ import { SeleccionarTemaComponent } from './seleccionar-tema/seleccionar-tema.co
 import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
 import { LoginComponent } from './login/login.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 const routes: Routes = [
 {
@@ -49,6 +50,14 @@ const routes: Routes = [
       {
         path: "seleccionar-tema",
         component: SeleccionarTemaComponent,
+      },
+      {
+        path: "pagina-principal-admin",
+        component: PaginaPrincipalComponent,
+      },
+      {
+        path: "usuarios",
+        component: UsuariosComponent,
       }
     ]
 },

@@ -1,34 +1,43 @@
-<div class="card mb-5">
+<div class="card mb-5 mt'5">
     <h5 class="card-header">Configuracion</h5>
     <div class="card-body">
         <div class="row">
-            <div class="col-md-6 mt-3 mb-3">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            <div class="col-sm-6 mt-5">
+                <div class="custom-file mb-3">
+                    Subir nuevo favicon
+                    <input type="file" class="custom-file-input" id="customFile" name="filename">
+                    <label class="custom-file-label" for="customFile">Favicon</label>
+                </div>
+            </div>
+            <div class="col-sm-6 mt-5">
+                <div class="custom-file mb-3">
+                    Subir logotipo
+                    <input type="file" class="custom-file-input" id="customFile" name="filename">
+                    <label class="custom-file-label" for="customFile">Logotipo</label>
+                </div>
             </div>
             <div class="col-md-6 mt-3 mb-3">
-                <label for="inputPassword4">Password</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                <label for="inputEmail4">Titulo Pagina</label>
+                <input class="form-control" id="inputEmail4" placeholder="Pagina n">
+            </div>
+            <div class="col-md-6 mt-3 mb-3">
+                <label for="inputPassword4">Palabras clave</label>
+                <input class="form-control" id="inputPassword4" placeholder="palabras clave">
             </div>
 
-            <div class="col-md-12 mt-3 mb-3">
-                <label for="inputAddress">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            <div class="col-sm-12 mt-3 mb-5">
+                <div class="custom-file mb-3">
+                    CSS extra:
+                    <div [froalaEditor]></div>
+                </div>
+                <br><br>
             </div>
-
-            <div class=" col-md-6 mt-3 mb-3">
-                <label for="inputCity">City</label>
-                <input type="text" class="form-control" id="inputCity">
-            </div>
-            <div class=" col-md-4 mt-3 mb-3">
-                <label for="inputState">State</label>
-                <select id="inputState" class="form-control">
-            <option selected>Choose...</option>
-            <option>...</option>
-          </select>
-            </div>
-            <div class="col-sm-12 m-2">
-                <button class="btn btn-dark">Sign in</button>
+            <div class="col-sm-12 mt-3 mb-5">
+                <div class="custom-file mb-3">
+                    JS extra:
+                    <div [froalaEditor]></div>
+                </div>
+                <br><br>
             </div>
 
         </div>
@@ -41,30 +50,21 @@
     <div class="card-body">
         <div id="demo-app">
             <div class="row">
-                <div class="col-4">
-                    <div class="col-12 mb-3">
-                        <div class="panel bgcolor">
-                            <button id="bgcolor-button" style="background-image: none; background-color: rgb(171, 37, 103); color: rgb(255, 255, 255);" class="jscolor-active">Color Fondo</button>
-
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="panel fgcolor">
-                            <button id="fgcolor-button" style="background-image: none; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">Color
-                  Texto&nbsp</button>
-
-                        </div>
-                    </div>
+                <div class="col-6 mb-3">
+                    Color de fondo:<br>
+                    <compact-picker [control]="compactControl"></compact-picker>
                 </div>
-                <div class="col-8">
-                    <div id="demo-preview" style="text-align: center ;background-color: rgb(171, 37, 103); border-color: rgb(255, 255, 255); color: rgb(255, 255, 255);">
-
-                        Colores de <br> Header y footer<br>
-                    </div>
+                <div class="col-6 mb-3">
+                    Color de texto:<br>
+                    <compact-picker [control]="compactControl1"></compact-picker>
                 </div>
-
-                <div class="col-sm-6 mt-5">
-                    Color iconos: <input class="jscolor" value="ab2567">
+                <div class="col-6 mb-3">
+                    Colores de Header y footer<br>
+                    <compact-picker [control]="compactControl2"></compact-picker>
+                </div>
+                <div class="col-6 mb-3">
+                    Color iconos:<br>
+                    <compact-picker [control]="compactControl3"></compact-picker>
                 </div>
                 <div class="col-sm-6 mt-5">
                     <div class="custom-file mb-3">
@@ -76,10 +76,7 @@
             </div>
         </div>
     </div>
-</div>
-
-<div class="card mb-5">
-    <h5 class="card-header">Pie de Pagina (Footer)</h5>
-    <div class="card-body">
+    <div class="col-sm-12 m-2">
+        <button class="btn btn-dark">Guardar Cambios</button>
     </div>
 </div>
