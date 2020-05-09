@@ -4,58 +4,51 @@
         <div class="row">
             <div class="col-md-6 mt-3 mb-3">
                 <label for="titulo">Titulo</label>
-                <input class="form-control" id="titulo" placeholder="Pagina n">
+                <input [(ngModel)]="Titulo" class="form-control" id="titulo" placeholder="Pagina n">
             </div>
             <div class="col-md-6 mt-3 mb-3">
                 <label for="autor">Titulo en menu</label>
-                <input class="form-control" id="autor">
+                <input [(ngModel)]="TituloMenu" class="form-control" id="autor">
             </div>
             <div class="col-md-6 mt-3 mb-3">
                 <label for="titulo">Pagina padre</label>
-                <input class="form-control" id="titulo" placeholder="Pagina n">
+                <input [(ngModel)]="PaginaPadre" class="form-control" id="titulo" placeholder="Pagina n">
             </div>
 
             <div class="col-md-6 mt-3 mb-3">
                 <label for="autor">URL:</label>
-                <input class="form-control" id="autor">
+                <input [(ngModel)]="Url" class="form-control" id="autor">
             </div>
 
             <div class="col-md-6 mt-3 mb-3">
                 <label for="inputPassword4">Palabras clave</label>
-                <input class="form-control">
+                <input [(ngModel)]="PalabrasClave" class="form-control">
             </div>
             <div class="col-md-6 mt-3 mb-3">
                 <label for="Descripcion">Descripcion</label>
-                <textarea class="form-control" id="Descripcion" rows="3"></textarea>
+                <textarea [(ngModel)]="Descripcion" class="form-control" id="Descripcion" rows="3"></textarea>
             </div>
-            <div class="col-md-4 mt-3 mb-3">
-                <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                    <label class="custom-control-label" for="customSwitch1">Estado de la pagina activo</label>
+            <div class="col-md-12 mt-3 mb-3">
+                <div class="checkbox-items">
+                    <ng-container *ngFor="let item of checkboxesDataList">
+                        <div class="col-md-12 mt-3 mb-3">
+                            <input type="checkbox" [(ngModel)]="item.isChecked" (change)="changeSelection()">{{item.label}}
+                        </div>
+                    </ng-container>
                 </div>
             </div>
-            <div class="col-md-4 mt-3 mb-3">
-                <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="customSwitch2">
-                    <label class="custom-control-label" for="customSwitch2">Incluir encabezado</label>
-                </div>
-            </div>
-            <div class="col-md-4 mt-3 mb-3">
-                <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="customSwitch3">
-                    <label class="custom-control-label" for="customSwitch3">Incluir pie de pagina</label>
-                </div>
-            </div>
+
+
             <div class="col-sm-12 mt-3 mb-5">
                 <div class="custom-file mb-3">
                     Ingresa tus shortcuts.
-                    <div [froalaEditor]></div>
+                    <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" [(ngModel)]="shortcuts"></ckeditor>
                 </div>
                 <br><br>
             </div>
             <br><br>
             <div class="col-sm-12 m-2">
-                <button class="btn btn-dark">Guardar</button>
+                <button class="btn btn-dark" (click)="guardar()">Guardar</button>
             </div>
 
         </div>

@@ -4,11 +4,11 @@
         <div class="row">
             <div class="col-md-6 mt-3 mb-3">
                 <label for="titulo">Titulo Entrada</label>
-                <input class="form-control" id="titulo" placeholder="Pagina n">
+                <input [(ngModel)]="TituloEntrada" class="form-control" id="titulo" placeholder="Pagina n">
             </div>
             <div class="col-md-6 mt-3 mb-3">
                 <label for="autor">Autor</label>
-                <input disableb="disabled" class="form-control" id="autor" value="Pedro Lopez">
+                <input [(ngModel)]="Autor" disableb="disabled" class="form-control" id="autor" value="Pedro Lopez">
             </div>
 
             <div class="col-sm-6 ">
@@ -27,17 +27,13 @@
             </div>
             <div class="col-md-6 mt-3 mb-3">
                 <label for="inputPassword4">Palabras clave</label>
-                <input class="form-control" id="inputPassword4" placeholder="palabras clave">
-            </div>
-            <div class="col-md-6 mt-3 mb-3">
-                <label for="inputPassword4">Palabras clave</label>
-                <input class="form-control" id="inputPassword4" placeholder="palabras clave">
+                <input [(ngModel)]="PalabrasClave" class="form-control" id="inputPassword4" placeholder="palabras clave">
             </div>
             <div class="col-sm-12 mt-3 mb-5">
-                <div class="custom-file ">
-                    Contenido de la entrada
-                    <div [froalaEditor]></div>
-                </div>
+
+                Contenido de la entrada
+                <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" [(ngModel)]='contenido'></ckeditor>
+
                 <br><br>
             </div>
             <br><br>
@@ -50,7 +46,7 @@
                 </div>
             </div>
             <div class="col-sm-12 m-2">
-                <button class="btn btn-dark">Guardar Entrada</button>
+                <button class="btn btn-dark" (click)='guardar()'>Guardar Entrada</button>
             </div>
 
         </div>

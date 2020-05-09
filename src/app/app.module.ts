@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -20,6 +20,8 @@ import { ColorPickerModule } from '@iplab/ngx-color-picker';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { SeguridadPaginasComponent } from './seguridad-paginas/seguridad-paginas.component';
+import { HttpClientModule } from "@angular/common/http";
+import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,20 +38,22 @@ import { SeguridadPaginasComponent } from './seguridad-paginas/seguridad-paginas
     AdminUsuariosComponent,
     AdminPaginasComponent,
     UsuariosComponent,
-    SeguridadPaginasComponent
-
+    SeguridadPaginasComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FroalaEditorModule.forRoot(), FroalaViewModule.forRoot(),
+    FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
     ColorPickerModule,
-    
+    HttpClientModule,
+    FormsModule,
+    CKEditorModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
