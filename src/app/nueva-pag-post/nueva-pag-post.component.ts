@@ -16,7 +16,18 @@ export class NuevaPagPostComponent implements OnInit {
   TituloEntrada:string;
   Autor:string;
   PalabrasClave:string;
-  PermitirComentarios:boolean;
+  PermitirComentarios:boolean= false;
+  label= 'Permitir comentarios';
+
+
+ changeSelection() {
+    if (!this.PermitirComentarios) {
+      this.PermitirComentarios=true;
+    }
+    else{
+      this.PermitirComentarios = false;}
+    //console.log("permitir comentarios:"+this.PermitirComentarios);
+  }
 
 
   guardar(){
@@ -24,7 +35,8 @@ export class NuevaPagPostComponent implements OnInit {
       TituloEntrada: this.TituloEntrada,
       Autor: this.Autor,
       PalabrasClave: this.PalabrasClave,
-      contenido: this.limpiar(this.contenido)
+      contenido: this.limpiar(this.contenido),
+      comentarios:this.PermitirComentarios
     }
     console.log(nuevaPagPost);
   }

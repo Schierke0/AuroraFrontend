@@ -5,15 +5,24 @@
             <div class="col-sm-6 mt-5">
                 <div class="custom-file mb-3">
                     Subir nuevo favicon
-                    <input type="file" class="custom-file-input" name="customFile" name="filename">
-                    <label class="custom-file-label" for="customFile">Favicon</label>
+                    <form enctype="multipart/form-data">
+                        <div>
+                            <p>
+                                <label>Subir archivo</label>
+                                <input type="file" (change)='fileChangeEvent($event)' />
+                            </p>
+                            <input type='button' (click)="mostrarArvhivo()" value="Subir">
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="col-sm-6 mt-5">
                 <div class="custom-file mb-3">
                     Subir logotipo
-                    <input type="file" class="custom-file-input" name="customFile" name="filename">
-                    <label class="custom-file-label" for="customFile">Logotipo</label>
+                    <form enctype="multipart/form-data">
+                        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="customFile">Logotipo</label>
+                    </form>
                 </div>
             </div>
             <div class="col-md-6 mt-3 mb-3">
