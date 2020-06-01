@@ -1,24 +1,41 @@
-<div class="col-sm-6 ">
-    <div class="custom-file mb-3">
-        <input type="file" class="custom-file-input" id="customFile" name="filename">
-        <label class="custom-file-label" for="customFile">Nuevo archivo</label>
+<div class="col-12">
+    <div class="col-2 mb-2 offset-10 pt-3">
+        <button (click)="abrirModal(modalUpload)" class="btn btn-dark">Subir Archivo</button>
     </div>
+    <!-- ?????????????????? -->
 
+    <!-- ?????????????????? -->
 </div>
+
 <div class="card text-center">
     <div class="card-header">
         <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item">
-                <a class="nav-link" href="#">Imagenes</a>
+                <a class="nav-link" (click)="visualizar='imagenes'">Imagenes</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Videos</a>
+                <a class="nav-link" (click)="visualizar='videos'">videos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Archivos de texto</a>
+                <a class="nav-link" (click)="visualizar='pdfs'">PDF's</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Otros</a>
+                <a class="nav-link" (click)="visualizar='textos'">Textos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="visualizar='words'">Word's</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="visualizar='presentaciones'">Presentaciones</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="visualizar='compresos'">Compresos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="visualizar='excels'">Excel's</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="visualizar='otros'">Posts</a>
             </li>
         </ul>
     </div>
@@ -26,61 +43,151 @@
         <!--########################################PLANTILLA IMAGENES#################################-->
         <section class="gallery-block cards-gallery">
             <div class="container">
-                <div class="heading">
-                    <h2>Imagenes</h2>
-                </div>
                 <div class="row">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card border-0 transform-on-hover">
-                            <a class="lightbox" href="../../assets/img/portfolio-1.jpg">
-                                <img src="../../assets/img/portfolio-1.jpg" alt="Card Image" class="card-img-top img-fluid">
-                            </a>
-                            <div class="card-body">
-                                <h6>codigo:7894j9tuj943</h6>
-                                <hr>
-                                <p class="text-muted card-text"><i class="far fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-upload"></i></p>
+                    <ng-container *ngIf="visualizar=='imagenes'">
+                        <div class="col-md-6 col-lg-4" *ngFor="let imagen of imagenes">
+                            <div class="card border-0 transform-on-hover">
+                                <a class="lightbox" href="http://localhost:8888{{imagen.accesoRoute}}">
+                                    <img src="http://localhost:8888{{imagen.accesoRoute}}" alt="Card Image" class="card-img-top img-fluid form-control">
+                                </a>
+                                <div class="card-body">
+                                    <b>codigo:&nbsp;{{imagen._id}}</b>
+                                    <hr>
+                                    <p class="text-muted card-text"><i class="far fa-trash-alt" (click)="eliminarArchivo(imagen._id,imagen.nombre)"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-upload"></i></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card border-0 transform-on-hover">
-                            <a class="lightbox" href="../../assets/img/portfolio-3.jpg">
-                                <img src="../../assets/img/portfolio-3.jpg" alt="Card Image" class="card-img-top img-fluid">
-                            </a>
-                            <div class="card-body">
-                                <h6>codigo:7894j9tuj943</h6>
-                                <hr>
-                                <p class="text-muted card-text"><i class="far fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-upload"></i></p>
+                    </ng-container>
+                    <ng-container *ngIf="visualizar=='words'">
+                        <div class="col-md-6 col-lg-4" *ngFor="let word of words">
+                            <div class="card border-0 transform-on-hover">
+                                <a class="lightbox">
+                                    <img src="../../assets/img/Word_2010_23623.png" class="img-fluid">
+                                </a>
+                                <div class="card-body">
+                                    <b>codigo:&nbsp;{{word._id}}</b><br>
+                                    <span>{{word.nombre}}</span>
+                                    <hr>
+                                    <p class="text-muted card-text"><i class="far fa-trash-alt" (click)="eliminarArchivo(word._id,word.nombre)"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-upload"></i></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card border-0 transform-on-hover">
-                            <a class="lightbox" href="../../assets/img/portfolio-1.jpg">
-                                <img src="../../assets/img/portfolio-3.jpg" alt="Card Image" class="card-img-top img-fluid">
-                            </a>
-                            <div class="card-body">
-                                <h6>codigo:7894j9tuj943</h6>
-                                <hr>
-                                <p class="text-muted card-text"><i class="far fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-upload"></i></p>
+                    </ng-container>
+                    <ng-container *ngIf="visualizar=='presentaciones'">
+                        <div class="col-md-6 col-lg-4" *ngFor="let presentacion of presentaciones">
+                            <div class="card border-0 transform-on-hover">
+                                <a class="lightbox">
+                                    <img src="../../assets/img/PowerPoint_2010_23617.png" class="img-fluid">
+                                </a>
+                                <div class="card-body">
+                                    <b>codigo:&nbsp;{{presentacion._id}}</b><br>
+                                    <span>{{presentacion.nombre}}</span>
+                                    <hr>
+                                    <p class="text-muted card-text"><i class="far fa-trash-alt" (click)="eliminarArchivo(presentacion._id,presentacion.nombre)"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-upload"></i></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card border-0 transform-on-hover">
-                            <a class="lightbox" href="../../assets/img/portfolio-2.jpg">
-                                <img src="../../assets/img/portfolio-3.jpg" alt="Card Image" class="card-img-top img-fluid">
-                            </a>
-                            <div class="card-body">
-                                <h6>codigo:7894j9tuj943</h6>
-                                <hr>
-                                <p class="text-muted card-text"><i class="far fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-upload"></i></p>
+                    </ng-container>
+                    <ng-container *ngIf="visualizar=='pdfs'">
+                        <div class="col-md-6 col-lg-4" *ngFor="let pdf of pdfs">
+                            <div class="card border-0 transform-on-hover">
+                                <a class="lightbox">
+                                    <img src="../../assets/img/Pdf_icon68956.png" class="img-fluid">
+                                </a>
+                                <div class="card-body">
+                                    <b>codigo:&nbsp;{{pdf._id}}</b><br>
+                                    <span>{{pdf.nombre}}</span>
+                                    <hr>
+                                    <p class="text-muted card-text"><i class="far fa-trash-alt" (click)="eliminarArchivo(pdf._id,pdf.nombre)"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-upload"></i></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
+                    </ng-container>
+                    <ng-container *ngIf="visualizar=='videos'">
+                        <div class="col-md-6 col-lg-4" *ngFor="let video of videos">
+                            <div class="card border-0 transform-on-hover">
+                                <a class="lightbox">
+                                    <video src="http://localhost:8888{{video.accesoRoute}}" autoplay muted loop class="card-img-top"></video>
+                                </a>
+                                <div class="card-body">
+                                    <b>codigo:&nbsp;{{video._id}}</b><br>
+                                    <span>{{video.nombre}}</span>
+                                    <hr>
+                                    <p class="text-muted card-text"><i class="far fa-trash-alt" (click)="eliminarArchivo(video._id,video.nombre)"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-upload"></i></p>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="visualizar=='compresos'">
+                        <div class="col-md-6 col-lg-4" *ngFor="let compreso of compresos">
+                            <div class="card border-0 transform-on-hover">
+                                <a class="lightbox">
+                                    <img src="../../assets/img/WinRAR_23510.png" class="img-fluid">
+                                </a>
+                                <div class="card-body">
+                                    <b>codigo:&nbsp;{{compreso._id}}</b><br>
+                                    <span>{{compreso.nombre}}</span>
+                                    <hr>
+                                    <p class="text-muted card-text"><i class="far fa-trash-alt" (click)="eliminarArchivo(compreso._id,compreso.nombre)"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-upload"></i></p>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="visualizar=='excels'">
+                        <div class="col-md-6 col-lg-4" *ngFor="let excel of excels">
+                            <div class="card border-0 transform-on-hover">
+                                <a class="lightbox">
+                                    <img src="../../assets/img/Excel_2010_23622.png" class="img-fluid">
+                                </a>
+                                <div class="card-body">
+                                    <b>codigo:&nbsp;{{excel._id}}</b><br>
+                                    <span>{{excel.nombre}}</span>
+                                    <hr>
+                                    <p class="text-muted card-text"><i class="far fa-trash-alt" (click)="eliminarArchivo(excel._id,excel.nombre)"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-upload"></i></p>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="visualizar=='textos'">
+                        <div class="col-md-6 col-lg-4" *ngFor="let texto of textos">
+                            <div class="card border-0 transform-on-hover">
+                                <a class="lightbox">
+                                    <img src="../../assets/img/Oficina_TXT_35458.png" class="img-fluid">
+                                </a>
+                                <div class="card-body">
+                                    <b>codigo:&nbsp; {{texto._id}}</b><br>
+                                    <span>{{texto.nombre}}</span>
+                                    <hr>
+                                    <p class="text-muted card-text"><i class="far fa-trash-alt" (click)="eliminarArchivo(texto._id,texto.nombre)"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-upload"></i></p>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="visualizar=='otros'">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Titulo Post</th>
+                                    <th scope="col">Shortcut</th>
+                                    <th scope="col">Opciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let post of posts;let i = index">
+                                    <th scope="row">{{i+1}}</th>
+                                    <td>{{post.TituloEntrada}}</td>
+                                    <td>{{post._id}}</td>
+                                    <td><i (click)="eliminarPost(post._id, post.TituloEntrada)" class="far fa-trash-alt">
+                        
+                                </i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <i (click)="modalActualizarPost(post._id, modalActualizacion)" class="fas fa-upload"></i> &nbsp;&nbsp;
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </ng-container>
+                    <!-- hasta aqui -->
                 </div>
             </div>
         </section>
@@ -89,3 +196,55 @@
 
     </div>
 </div>
+
+<!--modal de actualizacion -->
+<ng-template #modalActualizacion let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Actualizar Post</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+        <label>Titulo:</label>
+        <input class="form-control" name="categoriaName" [(ngModel)]="tituloPost"><br>
+        <label>PalabrasClave:</label>
+        <input class="form-control" name="categoriaName" [(ngModel)]="palabrasPost"><br>
+        <label>Contenido:</label>
+        <textarea rows="5" class="form-control" name="categoriaName" [(ngModel)]="contenidoPost"></textarea><br>
+        <label>Categoria:</label><br>
+        <select [(ngModel)]="opcionSeleccionado" (change)="capturar()" class="form-control">
+                  <option *ngFor="let categoria of categorias" [ngValue]="categoria.nombreCategoria">
+                    {{categoria.nombreCategoria}}
+                  </option>
+        </select>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-dark" (click)="modal.close('Save click')">Cancelar</button>
+        <button type="button" class="btn btn-dark" (click)="actualizarPost()">Actualizar</button>
+    </div>
+</ng-template>
+
+<!-- modal subor archivo -->
+<ng-template #modalUpload let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Nuevo archivo</h4>
+        <span aria-hidden="true">&times;</span>
+    </div>
+    <div class="modal-body">
+        <div class="custom-file mb-3">
+
+            <form enctype="multipart/form-data">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile" (change)="fileChange($event)" type="file">
+                    <label class="custom-file-label" for="customFile">{{LabelArchivo}}</label>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-dark" (click)="modal.close('Save click')">Close</button>
+        <button (click)='upload()' class="btn btn-dark">Guardar Cambios</button>
+    </div>
+</ng-template>

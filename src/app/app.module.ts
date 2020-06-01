@@ -22,6 +22,18 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { SeguridadPaginasComponent } from './seguridad-paginas/seguridad-paginas.component';
 import { HttpClientModule } from "@angular/common/http";
 import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatToolbarModule} from '@angular/material/toolbar';
+import { MatIconModule } from "@angular/material/icon";
+import { MatCardModule } from "@angular/material/card";
+import { MatButtonModule } from "@angular/material/button";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
+import { PaginaPrincipalShowComponent } from './pagina-principal-show/pagina-principal-show.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PaginaEstaticaComponent } from './pagina-estatica/pagina-estatica.component';
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +51,8 @@ import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
     AdminPaginasComponent,
     UsuariosComponent,
     SeguridadPaginasComponent,
+    PaginaPrincipalShowComponent,
+    PaginaEstaticaComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +66,14 @@ import { CKEditorModule } from "@ckeditor/ckeditor5-angular";
     HttpClientModule,
     FormsModule,
     CKEditorModule,
+    ReactiveFormsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatProgressBarModule,
+    NgbModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent],

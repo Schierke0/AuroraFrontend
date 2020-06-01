@@ -13,7 +13,8 @@ import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.co
 import { LoginComponent } from './login/login.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
-
+import {PaginaPrincipalShowComponent} from './pagina-principal-show/pagina-principal-show.component'
+import { PaginaEstaticaComponent } from './pagina-estatica/pagina-estatica.component';
 const routes: Routes = [
 {
   path:"dashboard",
@@ -72,8 +73,15 @@ const routes: Routes = [
 {
   path: '',
   component: LandingPageComponent
+},
+{
+  path: "paginaPrincipal",
+  component: PaginaPrincipalShowComponent
+},
+{
+  path: "paginaEstaticaGenerada",
+  component: PaginaEstaticaComponent
 }
-
 ];
 
 @NgModule({

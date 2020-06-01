@@ -3,6 +3,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 mt-3 mb-3">
+                <!-- <ckeditor [editor]="Editor" (change)="onChange($event)"></ckeditor> -->
                 <label for="titulo">Titulo</label>
                 <input [(ngModel)]="Titulo" class="form-control" id="titulo" placeholder="Pagina n">
             </div>
@@ -42,7 +43,8 @@
             <div class="col-sm-12 mt-3 mb-5">
                 <div class="custom-file mb-3">
                     Ingresa tus shortcuts.
-                    <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" [(ngModel)]="shortcuts"></ckeditor>
+                    <ckeditor [editor]="Editor" (change)="onChange($event)" data="<p>Escibe aqui tus shortcuts</p>"></ckeditor>
+
                 </div>
                 <br><br>
             </div>

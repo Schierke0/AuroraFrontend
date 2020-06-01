@@ -2,29 +2,6 @@
     <h5 class="card-header">Configuracion</h5>
     <div class="card-body">
         <div class="row">
-            <div class="col-sm-6 mt-5">
-                <div class="custom-file mb-3">
-                    Subir nuevo favicon
-                    <form enctype="multipart/form-data">
-                        <div>
-                            <p>
-                                <label>Subir archivo</label>
-                                <input type="file" (change)='fileChangeEvent($event)' />
-                            </p>
-                            <input type='button' (click)="mostrarArvhivo()" value="Subir">
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-sm-6 mt-5">
-                <div class="custom-file mb-3">
-                    Subir logotipo
-                    <form enctype="multipart/form-data">
-                        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                        <label class="custom-file-label" for="customFile">Logotipo</label>
-                    </form>
-                </div>
-            </div>
             <div class="col-md-6 mt-3 mb-3">
                 <label for="inputEmail4">Titulo Pagina</label>
                 <input [(ngModel)]='TituloPagina' class="form-control" name="inputEmail4" placeholder="Pagina n">
@@ -33,19 +10,44 @@
                 <label for="inputPassword4">Palabras clave</label>
                 <input [(ngModel)]='PalabrasClave' class="form-control" name="inputPassword4" placeholder="palabras clave">
             </div>
-
-            <div class="col-sm-12 mt-3 mb-5">
+            <div class="col-sm-6 mt-5">
                 <div class="custom-file mb-3">
-                    CSS extra:
-                    <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" [(ngModel)]='css'></ckeditor>
+                    Subir logotipo
+                    <div class="custom-file">
+                        <form enctype="multipart/form-data">
+                            <input type="file" class="custom-file-input" id="inputGroupFile01" (change)="fileChange($event)" type="file">
+                            <label class="custom-file-label" for="customFile">{{labelLogotipo}}</label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 mt-5">
+                <div class="custom-file mb-3">
+                    Subir icono principal
+                    <div class="custom-file">
+                        <form enctype="multipart/form-data">
+                            <input type="file" class="custom-file-input" id="inputGroupFile01" (change)="fileChange2($event)" type="file">
+                            <label class="custom-file-label" for="customFile">{{labelIcono}}</label>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-12 mt-3 mb-5">
                 <div class="custom-file mb-3">
-                    JS extra:
-                    <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" [(ngModel)]='js'></ckeditor>
+                    CSS extra:
+                    <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" [(ngModel)]='css'> escribe aqui</ckeditor>
                 </div>
-                <br>
+            </div>
+            <div class="col-sm-6 mt-5">
+                <div class="custom-file mb-3">
+                    Imagen background:
+                    <div class="custom-file">
+                        <form enctype="multipart/form-data">
+                            <input type="file" class="custom-file-input" id="inputGroupFile01" (change)="fileChange3($event)" type="file">
+                            <label class="custom-file-label" for="customFile">{{labelBackground}}</label>
+                        </form>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -54,37 +56,42 @@
 </div>
 
 <div class="card mb-5">
-    <h5 class="card-header">Encabezado pie de pagina</h5>
+    <h5 class="card-header">Tema personalidado</h5>
     <div class="card-body">
         <div id="demo-app">
             <div class="row">
                 <div class="col-6 mb-3">
-                    Color de fondo:<br>
-                    <compact-picker [(color)]="colorFondo" [control]="compactControl"></compact-picker>
+                    Color de footer:<br>
+                    <compact-picker [(color)]="colorFoot" [control]="compactControl"></compact-picker>
                 </div>
                 <div class="col-6 mb-3">
-                    Color de texto:<br>
-                    <compact-picker [(color)]="colorTexto" [control]="compactControl1"></compact-picker>
+                    Color de texto titulo:<br>
+                    <compact-picker [(color)]="colorTextoTitulo" [control]="compactControl1"></compact-picker>
                 </div>
                 <div class="col-6 mb-3">
-                    Colores de Header y footer<br>
-                    <compact-picker [(color)]="colorHeadFoot" [control]="compactControl2"></compact-picker>
+                    Color de texto footer:<br>
+                    <compact-picker [(color)]="colorTextoFooter" [control]="compactControl2"></compact-picker>
                 </div>
-                <div class="col-6 mb-3">
-                    Color iconos:<br>
-                    <compact-picker [(color)]="colorIcono" [control]="compactControl3"></compact-picker>
-                </div>
-                <div class="col-sm-6 mt-5">
-                    <div class="custom-file mb-3">
-                        <input type="file" class="custom-file-input" name="customFile" name="filename">
-                        <label class="custom-file-label" for="customFile">Cargar Icono Principal</label>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
     <div class="col-sm-12 m-2">
-        <button (click)='guardar()' class="btn btn-dark">Guardar Cambios</button>
+        <button (click)='guardar()' class="btn btn-dark">Guardar Cambios</button>&nbsp;
+        <button (click)='visualizar(modalPrevisualizacion)' class="btn btn-dark">Visualizar</button>
     </div>
 </div>
+
+<ng-template #modalPrevisualizacion let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Previsualizacion pagina principal</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+        <app-pagina-principal-show></app-pagina-principal-show>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>

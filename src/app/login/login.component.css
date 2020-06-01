@@ -10,12 +10,12 @@
        position: relative;
        overflow-y: hidden;
    }
-
+   
    a {
        text-decoration: none;
        color: #444444;
    }
-
+   
    .login-reg-panel {
        position: relative;
        top: 50%;
@@ -28,10 +28,10 @@
        height: 400px;
        background-color: rgba(0, 0, 0, 0.75);
    }
-
-   .white-panel {
+   
+   .white-panelA {
        background-color: rgba(255, 255, 255, 1);
-       height: 500px;
+       height: 514px;
        position: absolute;
        top: -50px;
        width: 50%;
@@ -40,16 +40,40 @@
        z-index: 0;
        box-shadow: 0 0 30px 1px #00000096;
    }
-
+   
+   .white-panel {
+       background-color: rgba(255, 255, 255, 1);
+       height: 514px;
+       position: absolute;
+       top: -50px;
+       width: 50%;
+       transition: .3s ease-in-out;
+       z-index: 0;
+       box-shadow: 0 0 30px 1px #00000096;
+   }
+   
+   .white-panelB {
+       background-color: rgba(255, 255, 255, 1);
+       height: 514px;
+       position: absolute;
+       top: -50px;
+       width: 50%;
+       right: calc(11.5% - 50px);
+       -webkit-transition: .3s ease-in-out;
+       transition: .3s ease-in-out;
+       z-index: 0;
+       box-shadow: 0 0 30px 1px #00000096;
+   }
+   
    .login-reg-panel input[type="radio"] {
        position: relative;
        display: none;
    }
-
+   
    .login-reg-panel {
        color: white;
    }
-
+   
    .login-reg-panel #label-login,
    .login-reg-panel #label-register {
        border: 1px solid white;
@@ -62,7 +86,7 @@
        font-weight: 600;
        font-size: 18px;
    }
-
+   
    .login-info-box {
        width: 30%;
        padding: 0 50px;
@@ -71,7 +95,7 @@
        position: absolute;
        text-align: left;
    }
-
+   
    .register-info-box {
        width: 30%;
        padding: 0 50px;
@@ -80,11 +104,11 @@
        position: absolute;
        text-align: left;
    }
-
+   
    .right-log {
        right: 50px !important;
    }
-
+   
    .login-show,
    .register-show {
        z-index: 1;
@@ -95,12 +119,12 @@
        text-align: left;
        padding: 5px 50px 50px 50px;
    }
-
+   
    .show-log-panel {
        display: block;
        opacity: 0.9;
    }
-
+   
    .login-show input[type="text"],
    .login-show input[type="password"] {
        width: 100%;
@@ -110,7 +134,7 @@
        border: 1px solid #b5b5b5;
        outline: none;
    }
-
+   
    .login-show input[type="button"] {
        max-width: 150px;
        width: 100%;
@@ -123,12 +147,12 @@
        float: right;
        cursor: pointer;
    }
-
+   
    .login-show a {
        display: inline-block;
        padding: 10px 0;
    }
-
+   
    .register-show input[type="text"],
    .register-show input[type="password"] {
        width: 100%;
@@ -138,7 +162,7 @@
        border: 1px solid #b5b5b5;
        outline: none;
    }
-
+   
    .register-show input[type="button"] {
        max-width: 150px;
        width: 100%;
@@ -151,7 +175,7 @@
        float: right;
        cursor: pointer;
    }
-
+   
    .credit {
        position: absolute;
        bottom: 10px;
@@ -166,7 +190,7 @@
        letter-spacing: 1px;
        z-index: 99;
    }
-
+   
    a {
        text-decoration: none;
        color: #2c7715;
