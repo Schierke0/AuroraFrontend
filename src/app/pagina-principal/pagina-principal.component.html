@@ -15,7 +15,7 @@
                     Subir logotipo
                     <div class="custom-file">
                         <form enctype="multipart/form-data">
-                            <input type="file" class="custom-file-input" id="inputGroupFile01" (change)="fileChange($event)" type="file">
+                            <input required="required" type="file" class="custom-file-input" id="inputGroupFile01" (change)="fileChange($event)" type="file">
                             <label class="custom-file-label" for="customFile">{{labelLogotipo}}</label>
                         </form>
                     </div>
@@ -26,7 +26,7 @@
                     Subir icono principal
                     <div class="custom-file">
                         <form enctype="multipart/form-data">
-                            <input type="file" class="custom-file-input" id="inputGroupFile01" (change)="fileChange2($event)" type="file">
+                            <input required="required" type="file" class="custom-file-input" id="inputGroupFile01" (change)="fileChange2($event)" type="file">
                             <label class="custom-file-label" for="customFile">{{labelIcono}}</label>
                         </form>
                     </div>
@@ -43,7 +43,7 @@
                     Imagen background:
                     <div class="custom-file">
                         <form enctype="multipart/form-data">
-                            <input type="file" class="custom-file-input" id="inputGroupFile01" (change)="fileChange3($event)" type="file">
+                            <input type="file" required="required" class="custom-file-input" id="inputGroupFile01" (change)="fileChange3($event)" type="file">
                             <label class="custom-file-label" for="customFile">{{labelBackground}}</label>
                         </form>
                     </div>
