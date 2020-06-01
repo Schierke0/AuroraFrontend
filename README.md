@@ -1,2 +1,2 @@
 # Aurora
- Aurora CMS completo frontend y backend.
+ Aurora CMS completo backend y frontend
